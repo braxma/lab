@@ -1,0 +1,35 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+subprojects {
+    apply plugin: 'java'
+
+}
+
+project(":practice-rmi:api") {}
+
+project(":practice-rmi:client") {
+
+    apply plugin: 'com.github.johnrengelman.shadow'
+
+    jar.manifest.attributes 'Main-Class': 'xyz.ClientRmi'
+
+    dependencies {
+        implementation project(":practice-rmi:api")
+    }
+}
+
+project(":practice-rmi:server") {
+
+    apply plugin: 'com.github.johnrengelman.shadow'
+
+    jar.manifest.attributes 'Main-Class': 'xyz.ServerRmi'
+
+    shadow {
+    }
+
+    dependencies {
+        implementation project(":practice-rmi:api")
+    }
+}
