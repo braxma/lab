@@ -33,10 +33,10 @@ practice-ejb:
 
 lab-ejb:
     1. установаить aplication server который поддерживает спецификацию javaee-8
-     1.1 скачать архив
-       https://wildfly.org/downloads/
-     1.2 распаковать архив
-       wildfly-19.1.0.Final
+      1.1 скачать архив
+        https://wildfly.org/downloads/
+      1.2 распаковать архив
+        wildfly-19.1.0.Final
      1.3 запустить сервер
        $ wildfly-19.1.0.Final/bin/standalone.sh
      1.4 создать админа
