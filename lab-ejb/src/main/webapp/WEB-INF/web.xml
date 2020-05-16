@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+
+    <context-param>
+        <param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>JSF</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JSF</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+
+    <data-source>
+        <name>java:app/MySQLDataSource</name>
+        <class-name>com.mysql.cj.jdbc.MysqlDataSource</class-name>
+        <port-number>3306</port-number>
+        <database-name>lab</database-name>
+        <url>jdbc:mysql://localhost:3306/lab?zeroDateTimeBehavior=convertToNull&amp;useSSL=false</url>
+        <user>vadim</user>
+        <password>qwe123</password>
+    </data-source>
+
+    <welcome-file-list>
+        <welcome-file>list.xhtml</welcome-file>
+    </welcome-file-list>
+
+</web-app>

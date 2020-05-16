@@ -1,6 +1,4 @@
-package xyz;
-
-import org.hibernate.annotations.GenericGenerator;
+package xyz.employee;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -9,20 +7,18 @@ import java.io.Serializable;
 @Table(name = "employee")
 public class Employee implements Serializable {
 
-    private static final long serialVersionUID = 3L;
+    private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    public long id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     public String firsName;
     public String lastName;
-    public String sureName;
 
     public String occupation;
     public String department;
 
-    public double salary;
+    public Double salary;
 
     public Employee() {}
 
@@ -48,14 +44,6 @@ public class Employee implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getSureName() {
-        return sureName;
-    }
-
-    public void setSureName(String sureName) {
-        this.sureName = sureName;
     }
 
     public String getOccupation() {
@@ -88,7 +76,6 @@ public class Employee implements Serializable {
                 "id=" + id +
                 ", firsName='" + firsName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", sureName='" + sureName + '\'' +
                 ", occupation='" + occupation + '\'' +
                 ", department='" + department + '\'' +
                 ", salary=" + salary +
